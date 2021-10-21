@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: "Roboto", sans-serif;
+  }
+a{
+    text-decoration: none;
+}
+.header-logo{
+    display: flex;
+}
+.logo img{ width: 20%;}
+.header {
+    border-bottom: 1px solid #b2b2b2;
+    padding: 20px 0 17px 0;
+    border-top: 10px solid red;
+  }
+  .add {
+    padding: 4px 15px;
+    width: 8%;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: green;
+  }
