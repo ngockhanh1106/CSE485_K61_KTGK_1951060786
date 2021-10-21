@@ -1,5 +1,5 @@
 <?php
-require('menu.php');
+require('header.php');
 ?>
 <div class="main">
     <div class="container">
@@ -10,11 +10,11 @@ require('menu.php');
         <?php
 
         //1. Get the ID of Selected Admin
-        if (isset($_GET['manv'])) {
-            $manv = $_GET['manv'];
+        if (isset($_GET['bd_id'])) {
+            $bd_id = $_GET['bd_id'];
         }
         //2. Create SQL Query to Get the Details
-        $sql = "SELECT * FROM db_nhanvien WHERE manv=$manv";
+        $sql = "SELECT * FROM blood_donor WHERE bd_id=$bd_id";
         //echo $sql;
 
         //Execute the Query
@@ -30,15 +30,14 @@ require('menu.php');
                 // Get the Details
                 //echo "Admin Available";
                 $row = mysqli_fetch_assoc($res); //
+                $bd_id = $_POST['bd_id'];
+                $bd_name = $_POST['bd_name'];
+                $bd_sex = $_POST['bd_sex'];
+                $bd_sex = $_POST['bd_age'];
+                $bd_bgroup = $_POST['bd_bgroup'];
+                $bd_reg_date = $_POST['bd_reg_date'];
+                $bd_phno = $_POST['bd_phno'];
 
-                $tennv = $row['tennv'];
-                $chucvu = $row['chucvu'];
-                $email = $row['email'];
-                $mayban = $row['mayban'];
-                $sodidong = $row['sodidong'];
-                $current_image = $row['image_name'];
-                $madv = $row['madv'];
-                $old_madv = $madv;
             } else {
                 //Redirect to Manage Admin PAge
                 header('location:' . SITEURL . 'index.php');

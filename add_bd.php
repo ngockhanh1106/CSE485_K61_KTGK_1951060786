@@ -70,6 +70,7 @@ include('header.php');
         $bd_id = $_POST['bd_id'];
         $bd_name = $_POST['bd_name'];
         $bd_sex = $_POST['bd_sex'];
+        $bd_sex = $_POST['bd_age'];
         $bd_bgroup = $_POST['bd_bgroup'];
         $bd_reg_date = $_POST['bd_reg_date'];
         $bd_phno = $_POST['bd_phno'];
