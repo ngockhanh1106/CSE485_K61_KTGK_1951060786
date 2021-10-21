@@ -16,7 +16,7 @@ include('header.php')
         <table class="table table-striped table-hover">
           <thead>
             <tr>
-              <!-- <th scope="col">STT</th> -->
+              <th scope="col">STT</th>
               <th scope="col">Mã người hiến máu </th>
               <th scope="col">Tên người hiến máu</th>
               <th scope="col">Giới tính</th>
@@ -33,19 +33,19 @@ include('header.php')
             //include ('config/constants.php');
 
             //bước 2 khai báo câu lệnh thực thi và thực hiện truy vấn
-            $sql = "SELECT bd_id, bd_name, bd_sex, bd_age, bd_bgroup, bd_reg_date, bd_phno FROM blood_donor";
+            $sql = "SELECT bd_id, bd_name, bd_sex, bd_age, bd_bgroup, bd_reg_date, bd_phno FROM blood_donor order by bd_id";
             //echo $sql;
             $result = mysqli_query($conn, $sql);
             
 
             //bước 3 xử lý kết quả trả về
             if (mysqli_num_rows($result) > 0) {
-              //$i = 1;
+              $i = 1;
               while ($row = mysqli_fetch_assoc($result)) {
             ?>
 
                 <tr>
-                  <!-- <th scope="row">?php echo $i; ?> </th> -->
+                  <th scope="row"><?php echo $i; ?> </th>
                   <td><?php echo $row['bd_id']; ?> </td>
                   <td><?php echo $row['bd_name']; ?> </td>
                   <td><?php echo $row['bd_sex']; ?> </td>
@@ -57,7 +57,7 @@ include('header.php')
                   <td><a href="delete_bd.php?manv=<?php echo $row['bd_id']; ?>"><i class="fas fa-trash"></i></a></td>
                 </tr>
             <?php
-               // $i++;
+               $i++;
               }
             }
             ?>
